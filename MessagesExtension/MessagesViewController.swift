@@ -154,9 +154,6 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
     override func willTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
-        // Remove child view controllers
-        removeAllChildViewControllers()
-        
         guard let conversation = activeConversation else {
             fatalError("Expected the active conversation")
         }
@@ -170,7 +167,7 @@ class MessagesViewController: MSMessagesAppViewController {
         removeAllChildViewControllers()
         
         if presentationStyle == .compact {
-            guard let vc = instantiateCompactVC() as? CompactViewController  else { fatalError("wrong type") }
+            let vc = instantiateCompactVC()
             controller = vc
             addChildViewController(controller)
             view.addSubview(controller.view)
@@ -178,7 +175,7 @@ class MessagesViewController: MSMessagesAppViewController {
             NSLayoutConstraint(item: vc.mainView, attribute: NSLayoutAttribute.height, relatedBy: .equal, toItem: view, attribute: .height, multiplier: 1.0, constant: -40.0).isActive = true
             NSLayoutConstraint(item: vc.mainView, attribute: NSLayoutAttribute.height, relatedBy: .equal, toItem: view, attribute: .height, multiplier: 1.0, constant: -40.0).isActive = true
         } else {
-            guard let vc = instantiateExpandedVC() as? ExpandedViewController  else { fatalError("wrong type") }
+            let vc = instantiateExpandedVC()
             vc.conversation = conversation
             controller = vc
             addChildViewController(controller)
@@ -197,7 +194,7 @@ class MessagesViewController: MSMessagesAppViewController {
         controller.didMove(toParentViewController: self)
     }
     
-    private func instantiateCompactVC() -> UIViewController {
+    private func instantiateCompactVC() -> CompactViewController {
         guard let compactVC = storyboard?.instantiateViewController(withIdentifier: "CompactVC") as? CompactViewController else {
             fatalError("Can't instantiate CompactViewController")
         }
@@ -205,7 +202,7 @@ class MessagesViewController: MSMessagesAppViewController {
         return compactVC
     }
     
-    private func instantiateExpandedVC() -> UIViewController {
+    private func instantiateExpandedVC() -> ExpandedViewController {
         guard let expandedVC = storyboard?.instantiateViewController(withIdentifier: "ExpandedVC") as? ExpandedViewController else {
             fatalError("Can't instantiate ExpandedViewController")
         }
