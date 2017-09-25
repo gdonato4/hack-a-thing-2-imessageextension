@@ -29,10 +29,18 @@ class ExpandedViewController: MSMessagesAppViewController {
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var topImageView: UIImageView!
     
+    @IBOutlet var doneDrawing: UIButton!
+    
     private var mouseSwiped = false
     private var lastPoint: CGPoint?
     
     var conversation: MSConversation?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        doneDrawing.layer.cornerRadius = 10
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         mouseSwiped = false

@@ -110,19 +110,22 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0mo-IL-leZ" userLabel="TopImageView">
                                 <rect key="frame" x="-0.5" y="-0.5" width="320" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uh9-MA-bcA">
-                                <rect key="frame" x="20" y="30" width="96" height="30"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uh9-MA-bcA">
+                                <rect key="frame" x="20" y="30" width="120" height="30"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5L0-b7-Aro"/>
-                                    <constraint firstAttribute="width" constant="96" id="Tc4-LU-BJb"/>
+                                    <constraint firstAttribute="width" constant="120" id="Tc4-LU-BJb"/>
                                 </constraints>
-                                <state key="normal" title="Send Drawing"/>
+                                <state key="normal" title="Done Drawing">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="sendDrawing:" destination="vLk-ku-8rX" eventType="touchUpInside" id="Hki-Xb-shp"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uh9-MA-bcA" firstAttribute="leading" secondItem="s78-I6-Xfi" secondAttribute="leading" constant="20" id="1V6-Ye-n61"/>
                             <constraint firstItem="PhF-dY-Icw" firstAttribute="top" secondItem="NXk-AF-1GX" secondAttribute="bottom" id="3Qf-0c-KW8"/>
@@ -135,6 +138,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="doneDrawing" destination="uh9-MA-bcA" id="uOX-Cv-2aG"/>
                         <outlet property="mainImageView" destination="PhF-dY-Icw" id="4st-Ue-WjQ"/>
                         <outlet property="topImageView" destination="0mo-IL-leZ" id="7yq-2u-XsU"/>
                     </connections>
