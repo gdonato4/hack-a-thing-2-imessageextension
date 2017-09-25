@@ -100,18 +100,16 @@ class ExpandedViewController: MSMessagesAppViewController {
     private func composeMessage() -> MSMessage {
         let layout = MSMessageTemplateLayout()
         layout.image = mainImageView.image
-        print(layout.image!.size)
-        layout.imageTitle = "iMessage Extension"
-        layout.caption = "Hello world!"
+        layout.imageTitle = "Collaborative Drawing"
+        layout.caption = "A new drawing!"
         
         let message = MSMessage()
         message.shouldExpire = true
         message.layout = layout
+        message.summaryText = "Summary text"
         
         return message
     }
-    
-    
 }
 
 class MessagesViewController: MSMessagesAppViewController {
