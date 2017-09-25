@@ -159,10 +159,12 @@
 				TargetAttributes = {
 					5F7DE5CA1F720A3900C429AB = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = K2WR3HLA57;
 						ProvisioningStyle = Automatic;
 					};
 					5F7DE5D41F720A3900C429AB = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = K2WR3HLA57;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -334,6 +336,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				DEVELOPMENT_TEAM = K2WR3HLA57;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AndrewOgren.CollaborativeDrawing.MessagesExtension;
@@ -347,6 +350,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				DEVELOPMENT_TEAM = K2WR3HLA57;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AndrewOgren.CollaborativeDrawing.MessagesExtension;
@@ -361,9 +365,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K2WR3HLA57;
 				INFOPLIST_FILE = CollaborativeDrawing/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AndrewOgren.CollaborativeDrawing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -373,9 +381,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K2WR3HLA57;
 				INFOPLIST_FILE = CollaborativeDrawing/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AndrewOgren.CollaborativeDrawing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -399,6 +411,7 @@
 				5F7DE5E91F720A3900C429AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F7DE5EB1F720A3900C429AB /* Build configuration list for PBXNativeTarget "CollaborativeDrawing" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +420,7 @@
 				5F7DE5ED1F720A3900C429AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
