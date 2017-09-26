@@ -6,7 +6,7 @@ We attempted to build a collaborative drawing imessage app. Essentially, you cou
 on that image and edit the drawing. Ideally, the drawing feature would incorporate the option for using different colors as well as an eraser feature.
 
 ### Who Did What
-Andrew wrote the base code to get the drawing functionality. We attempted to follow this tutorial https://www.raywenderlich.com/18840/how-to-make-a-simple-drawing-app-with-uikit, but
+Andrew wrote the base code to get the drawing functionality, added the multiple colors, and image uploading. We attempted to follow this tutorial https://www.raywenderlich.com/18840/how-to-make-a-simple-drawing-app-with-uikit, but
 the code was buggy and adjustments had to be made. Alex added buttons to launch the drawing screen and to send the message, as well as the eraser.
 
 ### What We Learned
