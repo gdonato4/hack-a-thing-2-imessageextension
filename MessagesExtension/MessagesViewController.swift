@@ -34,6 +34,9 @@ class ExpandedViewController: MSMessagesAppViewController {
     
     private var drawingWidth: CGFloat = 10.0
     private var drawingColor: CGColor = UIColor.black.cgColor
+    private var red: CGFloat = 0.0
+    private var green: CGFloat = 0.0
+    private var blue: CGFloat = 0.0
     
     // Buttons
     @IBOutlet var doneDrawing: UIButton!
@@ -133,8 +136,65 @@ class ExpandedViewController: MSMessagesAppViewController {
     }
     
     @IBAction func pencilPressed(_ sender: UIButton) {
-        drawingColor = UIColor.black.cgColor
         drawingWidth = 10.0
+        
+        let pressedButton = sender
+        switch(pressedButton.tag) {
+        case 0:
+            red = 0.0
+            green = 0.0
+            blue = 0.0
+            break
+        case 1:
+            red = 0.0/255.0
+            green = 0.0/255.0
+            blue = 255.0/255.0
+            break
+        case 2:
+            red = 160.0/255.0
+            green = 82.0/255.0
+            blue = 45.0/255.0
+            break
+        case 3:
+            red = 102.0/255.0
+            green = 255.0/255.0
+            blue = 0.0/255.0
+            break
+        case 4:
+            red = 51.0/255.0
+            green = 204.0/255.0
+            blue = 255.0/255.0
+            break
+        case 5:
+            red = 255.0/255.0
+            green = 255.0/255.0
+            blue = 0.0/255.0
+            break
+        case 6:
+            red = 255.0/255.0
+            green = 0.0/255.0
+            blue = 0.0/255.0
+            break
+        case 7:
+            red = 255.0/255.0
+            green = 102.0/255.0
+            blue = 0.0/255.0
+            break
+        case 8:
+            red = 105.0/255.0
+            green = 105.0/255.0
+            blue = 105.0/255.0
+            break;
+        case 9:
+            red = 102.0/255.0
+            green = 204.0/255.0
+            blue = 0.0/255.0
+            break
+        default:
+            break
+        }
+        
+        drawingColor = UIColor(red: red, green: green, blue: blue, alpha: 1.0).cgColor
     }
 }
 
