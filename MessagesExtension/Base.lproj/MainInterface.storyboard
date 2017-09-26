@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -104,14 +104,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PhF-dY-Icw" userLabel="MainImageView">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PhF-dY-Icw" userLabel="MainImageView">
                                 <rect key="frame" x="-0.5" y="-0.5" width="320" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0mo-IL-leZ" userLabel="TopImageView">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0mo-IL-leZ" userLabel="TopImageView">
                                 <rect key="frame" x="-0.5" y="-0.5" width="320" height="667"/>
                             </imageView>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uh9-MA-bcA">
-                                <rect key="frame" x="20" y="30" width="120" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wlO-pU-bqn" userLabel="Eraser">
+                                <rect key="frame" x="45" y="324" width="25" height="115"/>
+                                <state key="normal" image="Eraser"/>
+                                <connections>
+                                    <action selector="eraserPressed:" destination="vLk-ku-8rX" eventType="touchUpInside" id="EU6-yp-q5i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfu-1x-CsF" userLabel="Black">
+                                <rect key="frame" x="20" y="324" width="25" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="aa3-RK-Gfn"/>
+                                    <constraint firstAttribute="height" constant="128" id="dKc-0H-BbN"/>
+                                </constraints>
+                                <state key="normal" image="Black"/>
+                                <connections>
+                                    <action selector="pencilPressed:" destination="vLk-ku-8rX" eventType="touchUpInside" id="wzB-Sl-dkm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uh9-MA-bcA">
+                                <rect key="frame" x="184" y="366" width="120" height="30"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5L0-b7-Aro"/>
@@ -124,35 +142,17 @@
                                     <action selector="sendDrawing:" destination="vLk-ku-8rX" eventType="touchUpInside" id="Hki-Xb-shp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wlO-pU-bqn" userLabel="Eraser">
-                                <rect key="frame" x="45" y="324" width="25" height="115"/>
-                                <state key="normal" image="Eraser"/>
-                                <connections>
-                                    <action selector="eraserPressed:" destination="vLk-ku-8rX" eventType="touchUpInside" id="EU6-yp-q5i"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfu-1x-CsF" userLabel="Black">
-                                <rect key="frame" x="20" y="324" width="25" height="115"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="aa3-RK-Gfn"/>
-                                    <constraint firstAttribute="height" constant="128" id="dKc-0H-BbN"/>
-                                </constraints>
-                                <state key="normal" image="Black"/>
-                                <connections>
-                                    <action selector="pencilPressed:" destination="vLk-ku-8rX" eventType="touchUpInside" id="wzB-Sl-dkm"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uh9-MA-bcA" firstAttribute="leading" secondItem="s78-I6-Xfi" secondAttribute="leading" constant="20" id="1V6-Ye-n61"/>
                             <constraint firstItem="PhF-dY-Icw" firstAttribute="top" secondItem="NXk-AF-1GX" secondAttribute="bottom" id="3Qf-0c-KW8"/>
                             <constraint firstItem="0mo-IL-leZ" firstAttribute="top" secondItem="NXk-AF-1GX" secondAttribute="bottom" id="3aW-hn-taA"/>
+                            <constraint firstItem="uh9-MA-bcA" firstAttribute="leading" secondItem="wlO-pU-bqn" secondAttribute="trailing" constant="114" id="3la-aq-g0g"/>
                             <constraint firstItem="jfu-1x-CsF" firstAttribute="bottom" secondItem="0mo-IL-leZ" secondAttribute="bottom" id="5TB-zo-h8X"/>
                             <constraint firstItem="0mo-IL-leZ" firstAttribute="width" secondItem="s78-I6-Xfi" secondAttribute="width" id="6ov-VR-6Vr"/>
+                            <constraint firstItem="uh9-MA-bcA" firstAttribute="centerY" secondItem="wlO-pU-bqn" secondAttribute="centerY" id="7In-gC-vDY"/>
                             <constraint firstItem="PhF-dY-Icw" firstAttribute="leading" secondItem="s78-I6-Xfi" secondAttribute="leading" constant="-0.5" id="EDf-9l-FWn"/>
                             <constraint firstItem="PhF-dY-Icw" firstAttribute="width" secondItem="s78-I6-Xfi" secondAttribute="width" id="KWN-Yf-MuY"/>
-                            <constraint firstItem="uh9-MA-bcA" firstAttribute="top" secondItem="NXk-AF-1GX" secondAttribute="bottom" constant="10" id="Qet-LL-Mfy"/>
                             <constraint firstItem="jfu-1x-CsF" firstAttribute="leading" secondItem="0mo-IL-leZ" secondAttribute="leading" constant="20" id="Tns-eP-hQN"/>
                             <constraint firstItem="0mo-IL-leZ" firstAttribute="leading" secondItem="s78-I6-Xfi" secondAttribute="leading" constant="-0.5" id="fIm-r0-0Xo"/>
                             <constraint firstItem="wlO-pU-bqn" firstAttribute="leading" secondItem="jfu-1x-CsF" secondAttribute="trailing" id="fRd-Ah-hIY"/>
