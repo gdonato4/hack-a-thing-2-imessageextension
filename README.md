@@ -16,4 +16,4 @@ our knowledge of swift, the messages framework, and UIKit.
 
 ### What Didn't Work
 Constraints were a big pain, and there are definitely still some bugs revolved around constraints and objects not being in the positions that they
-should be. The collaborative part of the app also did not work as planned, and we were not able to get it to be fully functional. 
+should be. The collaborative part of the app also did not work as planned, and we were not able to get it to be fully functional. Essentially, we thought we would be able to access the image on the receiving end and load it into the imessage extension when it was clicked on. However, Apple does not allow you to do this. The only way to do it is to push the image to a server and then send the url as a payload to the receiver so that they can request the image from the server.
