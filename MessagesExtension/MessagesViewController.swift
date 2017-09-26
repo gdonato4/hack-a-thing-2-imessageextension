@@ -25,7 +25,7 @@ class CompactViewController: MSMessagesAppViewController {
     }
 }
 
-class ExpandedViewController: MSMessagesAppViewController {
+class ExpandedViewController: MSMessagesAppViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // Drawing variables
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var topImageView: UIImageView!
@@ -38,6 +38,8 @@ class ExpandedViewController: MSMessagesAppViewController {
     private var green: CGFloat = 0.0
     private var blue: CGFloat = 0.0
     
+    private let imagePicker = UIImagePickerController()
+    
     // Buttons
     @IBOutlet var doneDrawing: UIButton!
 
@@ -45,8 +47,9 @@ class ExpandedViewController: MSMessagesAppViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        imagePicker.delegate = self
         doneDrawing.layer.cornerRadius = 10
+        loadImagePressed.layer.cornerRadius = 10
     }
     
     // Drawing tracking
@@ -112,6 +115,22 @@ class ExpandedViewController: MSMessagesAppViewController {
         
         requestPresentationStyle(.compact)
     }
+    
+    @IBOutlet weak var loadImagePressed: UIButton!
+    @IBAction func loadImagePressed(_ sender: Any) {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    //image picker delegate
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            mainImageView.image = pickedImage
+        }
+        self.imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
     
     // Creates the message to be sent
     private func composeMessage() -> MSMessage {

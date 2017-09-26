@@ -241,6 +241,20 @@
                                     <action selector="sendDrawing:" destination="vLk-ku-8rX" eventType="touchUpInside" id="Hki-Xb-shp"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4E-3x-UGr">
+                                <rect key="frame" x="99" y="148" width="120" height="30"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="X8L-X8-dgf"/>
+                                    <constraint firstAttribute="height" constant="30" id="qO5-5O-YzY"/>
+                                </constraints>
+                                <state key="normal" title="Load Image">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadImagePressed:" destination="vLk-ku-8rX" eventType="touchUpInside" id="xT5-eC-NDJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -255,6 +269,8 @@
                             <constraint firstItem="0mo-IL-leZ" firstAttribute="width" secondItem="s78-I6-Xfi" secondAttribute="width" id="6ov-VR-6Vr"/>
                             <constraint firstItem="ngN-zD-1LB" firstAttribute="bottom" secondItem="hZE-W0-F19" secondAttribute="bottom" id="8I1-gh-mzW"/>
                             <constraint firstItem="PhF-dY-Icw" firstAttribute="leading" secondItem="s78-I6-Xfi" secondAttribute="leading" constant="-0.5" id="EDf-9l-FWn"/>
+                            <constraint firstItem="i4E-3x-UGr" firstAttribute="leading" secondItem="uh9-MA-bcA" secondAttribute="leading" id="HwZ-pn-HhX"/>
+                            <constraint firstItem="i4E-3x-UGr" firstAttribute="top" secondItem="uh9-MA-bcA" secondAttribute="bottom" constant="8" id="JgB-ns-aSW"/>
                             <constraint firstItem="PhF-dY-Icw" firstAttribute="width" secondItem="s78-I6-Xfi" secondAttribute="width" id="KWN-Yf-MuY"/>
                             <constraint firstItem="hGd-0x-O6R" firstAttribute="leading" secondItem="bxR-hj-tzm" secondAttribute="trailing" id="Kwa-k6-JmE"/>
                             <constraint firstItem="G7u-Ap-Xfq" firstAttribute="bottom" secondItem="bxR-hj-tzm" secondAttribute="bottom" id="MYm-K4-3i1"/>
@@ -281,6 +297,7 @@
                     </view>
                     <connections>
                         <outlet property="doneDrawing" destination="uh9-MA-bcA" id="uOX-Cv-2aG"/>
+                        <outlet property="loadImagePressed" destination="i4E-3x-UGr" id="Kt3-tm-oV6"/>
                         <outlet property="mainImageView" destination="PhF-dY-Icw" id="4st-Ue-WjQ"/>
                         <outlet property="topImageView" destination="0mo-IL-leZ" id="7yq-2u-XsU"/>
                     </connections>
