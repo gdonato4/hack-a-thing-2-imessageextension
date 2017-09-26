@@ -26,14 +26,18 @@ class CompactViewController: MSMessagesAppViewController {
 }
 
 class ExpandedViewController: MSMessagesAppViewController {
+    // Drawing variables
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var topImageView: UIImageView!
-    
-    @IBOutlet var doneDrawing: UIButton!
-    
     private var mouseSwiped = false
     private var lastPoint: CGPoint?
     
+    private var drawingWidth: CGFloat = 10.0
+    private var drawingColor: CGColor = UIColor.black.cgColor
+    
+    // Buttons
+    @IBOutlet var doneDrawing: UIButton!
+
     var conversation: MSConversation?
     
     override func viewDidLoad() {
@@ -42,6 +46,7 @@ class ExpandedViewController: MSMessagesAppViewController {
         doneDrawing.layer.cornerRadius = 10
     }
     
+    // Drawing tracking
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         mouseSwiped = false
         let touch = touches.first!
@@ -58,8 +63,8 @@ class ExpandedViewController: MSMessagesAppViewController {
         UIGraphicsGetCurrentContext()?.move(to: lastPoint!)
         UIGraphicsGetCurrentContext()?.addLine(to: currentPoint)
         UIGraphicsGetCurrentContext()?.setLineCap(.round)
-        UIGraphicsGetCurrentContext()?.setLineWidth(10)
-        UIGraphicsGetCurrentContext()?.setStrokeColor(red: 0, green: 0, blue: 0, alpha: 1)
+        UIGraphicsGetCurrentContext()?.setLineWidth(drawingWidth)
+        UIGraphicsGetCurrentContext()?.setStrokeColor(drawingColor)
         UIGraphicsGetCurrentContext()?.setBlendMode(.normal)
         UIGraphicsGetCurrentContext()?.strokePath()
         topImageView.image = UIGraphicsGetImageFromCurrentImageContext()
@@ -74,8 +79,8 @@ class ExpandedViewController: MSMessagesAppViewController {
             UIGraphicsBeginImageContext(mainImageView.frame.size)
             topImageView.image?.draw(in: CGRect(x: 0, y: 0, width: mainImageView.frame.size.width, height: mainImageView.frame.size.height))
             UIGraphicsGetCurrentContext()?.setLineCap(.round)
-            UIGraphicsGetCurrentContext()?.setLineWidth(10)
-            UIGraphicsGetCurrentContext()?.setStrokeColor(red: 0, green: 0, blue: 0, alpha: 1)
+            UIGraphicsGetCurrentContext()?.setLineWidth(drawingWidth)
+            UIGraphicsGetCurrentContext()?.setStrokeColor(drawingColor)
             UIGraphicsGetCurrentContext()?.move(to: lastPoint!)
             UIGraphicsGetCurrentContext()?.addLine(to: lastPoint!)
             UIGraphicsGetCurrentContext()?.strokePath()
@@ -92,6 +97,7 @@ class ExpandedViewController: MSMessagesAppViewController {
         topImageView.image = nil
     }
     
+    // Done Drawing clicked
     @IBAction func sendDrawing(_ sender: UIButton) {
         let message: MSMessage = composeMessage()
         
@@ -104,7 +110,7 @@ class ExpandedViewController: MSMessagesAppViewController {
         requestPresentationStyle(.compact)
     }
     
-    
+    // Creates the message to be sent
     private func composeMessage() -> MSMessage {
         let layout = MSMessageTemplateLayout()
         layout.image = mainImageView.image
@@ -117,6 +123,17 @@ class ExpandedViewController: MSMessagesAppViewController {
         message.summaryText = "Summary text"
         
         return message
+    }
+    
+    //  Handles all of the clicking
+    @IBAction func eraserPressed(_ sender: Any) {
+        drawingColor = UIColor.white.cgColor
+        drawingWidth = 30.0
+    }
+    
+    @IBAction func pencilPressed(_ sender: UIButton) {
+        drawingColor = UIColor.black.cgColor
+        drawingWidth = 10.0
     }
 }
 
